@@ -545,11 +545,14 @@ body {
     position: relative;
     display: flex;
     justify-content: flex-start;
-    align-self: flex-end;
+    align-items: flex-end;
     width: 100%;
     min-height: 932px;
     z-index: 9;
-    padding-bottom: 34px;
+    padding-bottom: 64px;
+    &--2 {
+      margin-top: -30px;  
+    }
     &__picture  {
         position: absolute;
         left: 0;
@@ -595,4 +598,17 @@ body {
         flex-flow: column nowrap;
         justify-content: flex-end;
     }
+}
+.products {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 861px;
+    border-radius: 42px;
+    margin-top: -30px;
+    z-index: 12;
+    background: $grey;
+    padding-bottom: 34px;
 }
