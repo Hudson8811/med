@@ -2575,6 +2575,55 @@ body {
   margin-bottom: 2px;
 }
 
+.btn--white {
+  min-height: 45px;
+  display: flex;
+  justify-content: center;
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  transition: all 0.3s;
+}
+
+.btn--white:hover {
+  transition: all 0.3s;
+}
+
+.btn--white:hover .btn--white__icon {
+  transition: all 0.3s;
+  background: none;
+}
+
+.btn--white__icon {
+  transition: all 0.3s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+  margin-right: 0;
+  width: 45px;
+  height: 45px;
+  margin-left: 11px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn--white__icon::after {
+  position: absolute;
+  display: block;
+  content: url(../../img/svg/btn-icon__2.svg);
+}
+
+.btn--white::after {
+  display: none;
+}
+
 @keyframes rotateCircle {
   0% {
     transform: rotate(0);
@@ -2625,28 +2674,6 @@ body {
 
 .text__20.white {
   color: #fff;
-}
-
-@keyframes scrollDown {
-  0% {
-    top: 1px;
-    opacity: 0;
-  }
-
-  20% {
-    top: 1px;
-    opacity: 1;
-  }
-
-  80% {
-    top: 7px;
-    opacity: 1;
-  }
-
-  100% {
-    top: 7px;
-    opacity: 0;
-  }
 }
 
 .detailed-offer {
@@ -2891,7 +2918,6 @@ body {
   justify-content: flex-start;
   border-radius: 42px;
   background: #193762;
-  backdrop-filter: blur(17.5px);
   padding: 35px 32px 32px 23px;
 }
 
@@ -2902,6 +2928,15 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   width: 33.333%;
+  padding-left: 20px;
+}
+
+.company__list__col:nth-child(1) {
+  justify-content: space-between;
+}
+
+.company__list__text {
+  margin-bottom: 30px;
 }
 
 .company .container {
