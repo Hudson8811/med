@@ -128,7 +128,7 @@ block content
 				.company__list__col
 					.company__list__text.text__20.white 
 						!="Израильская медицинская компания MEDEREN широко известна во всем мире. Под этим брендом ведется разработка и производство медицинских изделий и расходных материалов для самых разных направлений практической медицины, включая инфузионную терапию, хирургию и анестезиологию, реанимацию, урологию и гинекологию."
-					.btn.btn--circle.btn--circle--white
+					.btn.btn--circle.btn--circle--white.js-btn__detail
 						!="Подробнее"
 						.btn--circle__icon 
 				.company__list__col
@@ -148,10 +148,67 @@ block content
 							.products__card__text.text__20 
 								!="Эндотрахеальные трубки MEDEREN изготовлены из термопластичного ПВХ, способного «подстраиваться» под форму"
 							.products__card__buttons
-								.btn.btn--circle.btn--circle--blue
+								.btn.btn--circle.btn--circle--blue.js-btn__detail-product
 									!="Подробнее"
 									.btn--circle__icon
-								a(href="javascript:;").btn.js-btn__order.fancybox Заказать
+								.btn.js-btn__order Заказать
+				
+					.products__slide.swiper-slide
+						.products__card
+							.products__card__label Новинка
+							.products__card__picture
+								img(src="img/products__card__1.png", alt="")
+							.products__card__title Трубки эндотрахеальные
+							.products__card__text.text__20 
+								!="Эндотрахеальные трубки MEDEREN изготовлены из термопластичного ПВХ, способного «подстраиваться» под форму"
+							.products__card__buttons
+								.btn.btn--circle.btn--circle--blue.js-btn__detail-product
+									!="Подробнее"
+									.btn--circle__icon
+								.btn.js-btn__order Заказать
+				
+					.products__slide.swiper-slide
+						.products__card
+							.products__card__label Новинка
+							.products__card__picture
+								img(src="img/products__card__1.png", alt="")
+							.products__card__title Трубки эндотрахеальные
+							.products__card__text.text__20 
+								!="Эндотрахеальные трубки MEDEREN изготовлены из термопластичного ПВХ, способного «подстраиваться» под форму"
+							.products__card__buttons
+								.btn.btn--circle.btn--circle--blue.js-btn__detail-product
+									!="Подробнее"
+									.btn--circle__icon
+								.btn.js-btn__order Заказать
+				
+					.products__slide.swiper-slide
+						.products__card
+							.products__card__label Новинка
+							.products__card__picture
+								img(src="img/products__card__1.png", alt="")
+							.products__card__title Трубки эндотрахеальные
+							.products__card__text.text__20 
+								!="Эндотрахеальные трубки MEDEREN изготовлены из термопластичного ПВХ, способного «подстраиваться» под форму"
+							.products__card__buttons
+								.btn.btn--circle.btn--circle--blue.js-btn__detail-product
+									!="Подробнее"
+									.btn--circle__icon
+								.btn.js-btn__order Заказать
+				
+					.products__slide.swiper-slide
+						.products__card
+							.products__card__label Новинка
+							.products__card__picture
+								img(src="img/products__card__1.png", alt="")
+							.products__card__title Трубки эндотрахеальные
+							.products__card__text.text__20 
+								!="Эндотрахеальные трубки MEDEREN изготовлены из термопластичного ПВХ, способного «подстраиваться» под форму"
+							.products__card__buttons
+								.btn.btn--circle.btn--circle--blue.js-btn__detail-product
+									!="Подробнее"
+									.btn--circle__icon
+								.btn.js-btn__order Заказать
+				
 				.swiper-buttons
 					.swiper-button-prev
 					.swiper-button-next 	
@@ -455,6 +512,8 @@ block content
 						a(href="mailto:ds@medimcom.ru").contacts__person__mail.text__20 ds@medimcom.ru
 						a(href="tel:+79217818886").contacts__person__tel.text__20 доб. 205 / +7 (921) 781-88-86 
 
+	
+	//.js-btn__order
 	<div id="modal-reg" class="modal-reg" style="display:none">
 		form.contacts__form 
 			.contacts__form__title  Заказать звонок
@@ -464,6 +523,68 @@ block content
 				.contacts__form__btn.btn Отправить
 				.contacts__form__mess 	
 					!="Заполняя данную форму вы даете согласие на обработку своих персональных данных."
+	</div>
+	//.js-btn__detail
+	<div id="modal-detail" class="modal-detail" style="display:none">
+		.modal-detail__company
+			.modal-detail__company__title Medern
+			.modal-detail__company__text
+				.text__20 
+					!="Израильская медицинская компания MEDEREN широко известна во всем мире. Под этим брендом ведется разработка и производство медицинских изделий и расходных материалов для самых разных направлений практической медицины, включая инфузионную терапиюВ активе производителя свыше 3000 наименований, но разработки и расширение ассортимента неустанно продолжаются. Ведущая отличительная особенность товаров MEDEREN - высокое качество, подтвержденное многочисленными тестированиями В активе производителя свыше 3000 наименований, но разработки и расширение ассортимента неустанно продолжаются. Ведущая отличительная особенность товаров MEDEREN - высокое качество, подтвержденное многочисленными тестированиями В активе производителя свыше 3000 наименований, но разработки и расширение ассортимента неустанно продолжаются. Ведущая отличительная особенность товаров MEDEREN - высокое качество, подтвержденное многочисленными тестированиями"
+				
+			.modal-detail__company__buttons
+				.btn Запросить каталог
+
+	</div>
+	
+	//.js-btn__detail-product
+	<div id="modal-detail-product" class="modal-detail-product" style="display:none">
+		.modal-detail-product__wrap
+			.modal-detail-product__col
+				.modal-detail-product__img 
+					img(src="img/modal-detail-product__img__1.png", alt="")
+					.hints.hints__product.hints__product__1
+						div.hint.hint__product(data-template="product__1")
+							<svg xmlns="http://www.w3.org/2000/svg" width="34" height="35" viewBox="0 0 34 35" fill="none">
+							<circle opacity="0.2" cx="16.9746" cy="17.6502" r="16.9746" fill="#E83B3B"/>
+							<circle cx="16.6662" cy="17.5866" r="8.72874" fill="#E83B3B"/>
+							</svg>
+						div.hint.hint__product(data-template="product__2")
+							<svg xmlns="http://www.w3.org/2000/svg" width="34" height="35" viewBox="0 0 34 35" fill="none">
+							<circle opacity="0.2" cx="16.9746" cy="17.6502" r="16.9746" fill="#E83B3B"/>
+							<circle cx="16.6662" cy="17.5866" r="8.72874" fill="#E83B3B"/>
+							</svg>
+						div.hint.hint__product(data-template="product__2")
+							<svg xmlns="http://www.w3.org/2000/svg" width="34" height="35" viewBox="0 0 34 35" fill="none">
+							<circle opacity="0.2" cx="16.9746" cy="17.6502" r="16.9746" fill="#E83B3B"/>
+							<circle cx="16.6662" cy="17.5866" r="8.72874" fill="#E83B3B"/>
+							</svg>
+						div.hint.hint__product(data-template="product__3")
+							<svg xmlns="http://www.w3.org/2000/svg" width="34" height="35" viewBox="0 0 34 35" fill="none">
+							<circle opacity="0.2" cx="16.9746" cy="17.6502" r="16.9746" fill="#E83B3B"/>
+							<circle cx="16.6662" cy="17.5866" r="8.72874" fill="#E83B3B"/>
+							</svg>
+						.hint__lists(style="display:none")
+							.hint__list(id="product__1")
+								p Манжета низкого давления 
+							.hint__list(id="product__2")
+								p Эргономичная ручка  
+							.hint__list(id="product__3")
+								p Эргономичная ручка  
+							.hint__list(id="product__4")
+								p Эргономичная ручка  
+								ul
+									li Надежный и удобный обхват
+									li Уменьшает дискомфорт при большом количестве измерений
+					
+			.modal-detail__company
+				.modal-detail__company__title 
+					!="Трубки эндотрахеа<br>льные"
+				.modal-detail__company__text
+					.text__20 
+						!="Израильская медицинская компания MEDEREN широко известна во всем мире. Под этим брендом ведется разработка и производство медицинских изделий и расходных материалов для самых разных направлений практической медицины, включая инфузионную терапиюВ активе производителя свыше 3000 наименований, но разработки и расширение ассортимента неустанно продолжаются. Ведущая отличительная особенность товаров MEDEREN - высокое качество, подтвержденное многочисленными тестированиями В активе производителя свыше 3000 наименований, но разработки и расширение ассортимента неустанно продолжаются. Ведущая отличительная особенность товаров MEDEREN - высокое качество, подтвержденное многочисленными тестированиями В активе производителя свыше 3000 наименований, но разработки и расширение ассортимента неустанно продолжаются. Ведущая отличительная особенность товаров MEDEREN - высокое качество, подтвержденное многочисленными тестированиями"
+				.modal-detail__company__buttons
+					.btn Запросить каталог
 
 	</div>
 	

@@ -96,7 +96,110 @@ jQuery(function () {
 			type: "inline",
 		});
 	}	
+	function modalDetail() {
+		event.preventDefault();
+		$.fancybox.open({
+			src: "#modal-detail",
+			type: "inline",
+			display: "flex",
+			// defaultDisplay: "flex"
+		});
+		
+	}	
+	function modalDetailProduct() {
+		event.preventDefault();
+		$.fancybox.open({
+			src: "#modal-detail-product",
+			type: "inline",
+		});
+		
+	}	
+	function bodyNoScroll() {
+		let bodyBodymotionless = document.querySelector('body')
+		bodyBodymotionless.classList.add("Bodymotionless")
+	
+	}
+	function bodyYesScroll() {
+		let bodyBodymotionless = document.querySelector('body')
+		bodyBodymotionless.classList.remove("Bodymotionless")
+	}
 	$('.js-btn__order').on('click', function () {
 		modalReg();
+		// bodyNoScroll()
 	});
+	$('.js-btn__detail').on('click', function () {
+		modalDetail()
+		// bodyNoScroll()
+	});
+	$('.js-btn__detail-product').on('click', function () {
+		modalDetailProduct()
+		// bodyNoScroll()
+	});
+	if (document.documentElement.clientWidth < 767) {
+		tippy('.hint', {
+			content(reference) {
+				const id = reference.getAttribute('data-template');
+				const template = document.getElementById(id);
+				return template.innerHTML;
+			},
+			theme: 'tomato',
+			zIndex:	99993,
+			arrow: "none",
+			allowHTML: true,
+			// placement: 'right',
+			inlinePositioning: true,
+		
+		});
+	} else {
+		tippy('.hint', {
+			content(reference) {
+				const id = reference.getAttribute('data-template');
+				const template = document.getElementById(id);
+				return template.innerHTML;
+			},
+			theme: 'tomato',
+			arrow: "none",
+			allowHTML: true,
+			zIndex:		99993,
+			placement: 'right',
+			inlinePositioning: true,
+		
+		});
+	};
+
+	
+	let overlayBg = document.querySelector(".mob-menu--overlay");
+	let mobMenu = document.querySelector(".mob-menu__section");
+	let humb = document.querySelector(".hamburger");
+	let mobMenuClose = document.querySelector(".mob-menu--close");
+	
+	// var hamburger = $(".hamburger");
+	// hamburger.on("click", function(e) {
+	// 	hamburger.toggleClass("is-active");
+	// });
+
+
+	
+	mobMenuClose.addEventListener("click", function () {
+		mobMenu.classList.remove("active");
+		humb.classList.remove("is-active");
+		bodyYesScroll()
+	});
+	overlayBg.addEventListener("click", function () {
+		mobMenu.classList.remove("active");
+		humb.classList.remove("is-active");
+		bodyYesScroll()
+	});
+	humb.addEventListener("click", function () {
+		let kye = mobMenu.classList.contains("active");
+		if (kye == false) {
+			mobMenu.classList.add("active");
+			bodyNoScroll()
+		}else {
+			mobMenu.classList.remove("active");
+			bodyYesScroll()
+		}
+	});
+	
+
 });
