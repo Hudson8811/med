@@ -122,5 +122,14 @@ jQuery(function () {
 		});
 
 	})
-
+	function modalReg() {
+		event.preventDefault();
+		$.fancybox.open({
+			src: "#modal-reg",
+			type: "inline",
+		});
+	}	
+	$('.js-btn__order').on('click', function () {
+		modalReg();
+	});
 });

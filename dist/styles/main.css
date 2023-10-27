@@ -3560,6 +3560,80 @@ body {
   max-width: 232px;
 }
 
+.modal-reg {
+  padding: 0;
+  border-radius: 30px;
+}
+
+.modal-reg .fancybox-close-small {
+  background: #E8EBEF;
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 24px;
+  right: 24px;
+}
+
+.modal-reg .fancybox-button svg {
+  width: 50%;
+  height: 50%;
+  fill: #193762;
+}
+
+.modal-reg .fancybox-button svg path {
+  fill: #193762;
+}
+
+.modal-reg .contacts__form {
+  min-height: 430px;
+  background: #fff;
+  width: 438px;
+}
+
+.modal-reg .contacts__form__title {
+  color: #193762;
+  font-size: 58px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 46px;
+  width: 100%;
+  max-width: 330px;
+  margin-bottom: 40px;
+}
+
+.modal-reg .contacts__form__input {
+  color: #193762;
+  background: #E8EBEF;
+}
+
+.modal-reg .contacts__form__input::placeholder {
+  color: #193762;
+  font-weight: 700;
+}
+
+.modal-reg .contacts__form__mess {
+  color: #1B316D;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 25px;
+  max-width: 100%;
+  margin-bottom: 25px;
+}
+
+.modal-reg .contacts__form__bottom {
+  flex-flow: column-reverse nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.fancybox-bg {
+  background: rgba(25, 55, 98, 0.7);
+}
+
 .section__header {
   position: fixed;
   top: 0;
