@@ -23,13 +23,19 @@
 			align-items: center;
 		}
 	}
-	&__text {
+	&__text, a {
 		position: relative;
 		color: #FFF;
 		font-size: 20px;
 		font-style: normal;
 		font-weight: 500;
 		line-height: 18px;
+		text-decoration: none;
+		transition: all 0.3s;
+		&:hover {
+			transition: all 0.3s;
+			color: $orange;
+		}
 		@include max(md)  {
 			br {
 				display: none;
@@ -74,7 +80,12 @@
 			align-items: center;
 			width: 70px;
 			height: 70px;
-			margin-right: 10px;		
+			margin-right: 10px;	
+			transition: all 0.3s;
+			&:hover {
+				transition: all 0.3s;
+				background: rgba(255, 106, 61, 1);
+			}
 		}
 	}
 	&__emal {

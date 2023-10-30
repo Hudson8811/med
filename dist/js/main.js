@@ -2692,6 +2692,14 @@ jQuery(function () {
 		});
 		
 	}	
+	function modalRegCatalog() {
+		event.preventDefault();
+		$.fancybox.open({
+			src: "#modal-reg__catalog",
+			type: "inline",
+		});
+		
+	}	
 	function bodyNoScroll() {
 		let bodyBodymotionless = document.querySelector('body')
 		bodyBodymotionless.classList.add("Bodymotionless")
@@ -2711,6 +2719,10 @@ jQuery(function () {
 	});
 	$('.js-btn__detail-product').on('click', function () {
 		modalDetailProduct()
+		// bodyNoScroll()
+	});
+	$('.js-btn__order-catalog').on('click', function () {
+		modalRegCatalog();
 		// bodyNoScroll()
 	});
 	if (document.documentElement.clientWidth < 767) {

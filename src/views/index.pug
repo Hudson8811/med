@@ -150,7 +150,7 @@ block content
 			.company__list
 				.company__list__col
 					.company__list__title.title__100.white Medern
-					.btn.btn--shadow.company__list__btn.js-btn__order
+					.btn.btn--shadow.company__list__btn.js-btn__order-catalog
 						!="Запросить каталог"
 				.company__list__col
 					.company__list__text.text__20.white 
@@ -252,7 +252,7 @@ block content
 			.company__list
 				.company__list__col
 					.company__list__title.title__100.white Medern
-					.btn.btn--shadow.company__list__btn.js-btn__order
+					.btn.btn--shadow.company__list__btn.js-btn__order-catalog
 						!="Запросить каталог"
 				.company__list__col
 					.company__list__text.text__20.white 
@@ -371,7 +371,7 @@ block content
 			.customer__slider.swiper-container.js-customer__slider
 				.swiper-wrapper
 					.customer__slide.swiper-slide
-						.customer__card
+						a(href="#").customer__card
 							.customer__card__label
 								img(src="img/customer__card__label__1.png", alt="")
 							.customer__card__picture
@@ -379,16 +379,16 @@ block content
 							.customer__card__text.text__20
 								!="Городская клиническая больница №1 им. Пирогова"
 					.customer__slide.swiper-slide
-						.customer__card
+						a(href="#").customer__card
 							.customer__card__label
 								img(src="img/customer__card__label__2.png", alt="")
 							.customer__card__picture
 								img(src="img/customer__card__picture__2.png", alt="")
 							.customer__card__text.text__20
 								!="Городская клиническая больница №1 им. Пирогова"
-				
+			
 					.customer__slide.swiper-slide
-						.customer__card
+						a(href="#").customer__card
 							.customer__card__label
 								img(src="img/customer__card__label__1.png", alt="")
 							.customer__card__picture
@@ -396,16 +396,16 @@ block content
 							.customer__card__text.text__20
 								!="Городская клиническая больница №1 им. Пирогова"
 					.customer__slide.swiper-slide
-						.customer__card
+						a(href="#").customer__card
 							.customer__card__label
 								img(src="img/customer__card__label__2.png", alt="")
 							.customer__card__picture
 								img(src="img/customer__card__picture__2.png", alt="")
 							.customer__card__text.text__20
 								!="Городская клиническая больница №1 им. Пирогова"
-				
+			
 					.customer__slide.swiper-slide
-						.customer__card
+						a(href="#").customer__card
 							.customer__card__label
 								img(src="img/customer__card__label__1.png", alt="")
 							.customer__card__picture
@@ -413,7 +413,24 @@ block content
 							.customer__card__text.text__20
 								!="Городская клиническая больница №1 им. Пирогова"
 					.customer__slide.swiper-slide
-						.customer__card
+						a(href="#").customer__card
+							.customer__card__label
+								img(src="img/customer__card__label__2.png", alt="")
+							.customer__card__picture
+								img(src="img/customer__card__picture__2.png", alt="")
+							.customer__card__text.text__20
+								!="Городская клиническая больница №1 им. Пирогова"
+			
+					.customer__slide.swiper-slide
+						a(href="#").customer__card
+							.customer__card__label
+								img(src="img/customer__card__label__1.png", alt="")
+							.customer__card__picture
+								img(src="img/customer__card__picture__1.png", alt="")
+							.customer__card__text.text__20
+								!="Городская клиническая больница №1 им. Пирогова"
+					.customer__slide.swiper-slide
+						a(href="#").customer__card
 							.customer__card__label
 								img(src="img/customer__card__label__2.png", alt="")
 							.customer__card__picture
@@ -576,7 +593,7 @@ block content
 							.contacts__office__adress.text__20
 								!="г. Санкт-Петербург 197183 ул. Полевая Сабировская, д 43, лит.Б"
 					
-						.contacts__office
+						.contacts__office.active
 							.contacts__office__icon
 								<svg xmlns="http://www.w3.org/2000/svg" width="21" height="25" viewBox="0 0 21 25" fill="none">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M20.779 10.5522C20.779 16.1183 12.1037 23.7277 11.1144 24.5768C10.6984 24.9344 10.0827 24.9328 9.66895 24.5726C8.67534 23.7276 0 16.1182 0 10.5521C0 4.72423 4.65146 0 10.3895 0C16.1271 0 20.779 4.72449 20.779 10.5522ZM15.1121 9.9001C15.1121 12.3853 12.9977 14.4001 10.3896 14.4001C7.78146 14.4001 5.66709 12.3853 5.66709 9.9001C5.66709 7.41487 7.78146 5.4001 10.3896 5.4001C12.9977 5.4001 15.1121 7.41487 15.1121 9.9001Z" fill="#193762"/>
@@ -588,11 +605,14 @@ block content
 						form.contacts__form 
 							.contacts__form__title  Заказать звонок
 							input(type="text", name="" placeholder="Имя").contacts__form__input
-							input(type="email", name="" placeholder="Электронный адрес или телефон").contacts__form__input
+							input(type="email", name="" placeholder="Электронный адрес или телефон").contacts__form__input.js-mask-phone
 							.contacts__form__bottom 
 								.contacts__form__btn.btn Отправить
-								.contacts__form__mess 	
-									!="Заполняя данную форму вы даете согласие на обработку своих персональных данных."
+								.contacts__form__mess
+									<div class="checkbox">
+										<input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
+										<label for="color-1">Заполняя данную форму вы даете согласие на обработку своих персональных данных.</label>
+									</div>
 				
 				.contacts__persons
 					.contacts__person
@@ -628,8 +648,25 @@ block content
 			input(type="email", name="" placeholder="Электронный адрес или телефон").contacts__form__input
 			.contacts__form__bottom 
 				.contacts__form__btn.btn Отправить
-				.contacts__form__mess 	
-					!="Заполняя данную форму вы даете согласие на обработку своих персональных данных."
+				.contacts__form__mess
+					<div class="checkbox">
+						<input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
+						<label for="color-1">Заполняя данную форму вы даете согласие на обработку своих персональных данных.</label>
+					</div>
+	</div>
+	//.js-btn__order-catalog
+	<div id="modal-reg__catalog" class="modal-reg" style="display:none">
+		form.contacts__form 
+			.contacts__form__title  Запросить каталог
+			input(type="text", name="" placeholder="Имя").contacts__form__input
+			input(type="email", name="" placeholder="Электронный адрес или телефон").contacts__form__input
+			.contacts__form__bottom 
+				.contacts__form__btn.btn Отправить
+				.contacts__form__mess
+					<div class="checkbox">
+						<input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
+						<label for="color-1">Заполняя данную форму вы даете согласие на обработку своих персональных данных.</label>
+					</div>
 	</div>
 	//.js-btn__detail
 	<div id="modal-detail" class="modal-detail" style="display:none">
@@ -640,7 +677,7 @@ block content
 					!="Израильская медицинская компания MEDEREN широко известна во всем мире. Под этим брендом ведется разработка и производство медицинских изделий и расходных материалов для самых разных направлений практической медицины, включая инфузионную терапиюВ активе производителя свыше 3000 наименований, но разработки и расширение ассортимента неустанно продолжаются. Ведущая отличительная особенность товаров MEDEREN - высокое качество, подтвержденное многочисленными тестированиями В активе производителя свыше 3000 наименований, но разработки и расширение ассортимента неустанно продолжаются. Ведущая отличительная особенность товаров MEDEREN - высокое качество, подтвержденное многочисленными тестированиями В активе производителя свыше 3000 наименований, но разработки и расширение ассортимента неустанно продолжаются. Ведущая отличительная особенность товаров MEDEREN - высокое качество, подтвержденное многочисленными тестированиями"
 				
 			.modal-detail__company__buttons
-				.btn Запросить каталог
+				.btn.js-btn__order-catalog Запросить каталог
 
 	</div>
 	
@@ -691,7 +728,7 @@ block content
 					.text__20 
 						!="Израильская медицинская компания MEDEREN широко известна во всем мире. Под этим брендом ведется разработка и производство медицинских изделий и расходных материалов для самых разных направлений практической медицины, включая инфузионную терапиюВ активе производителя свыше 3000 наименований, но разработки и расширение ассортимента неустанно продолжаются. Ведущая отличительная особенность товаров MEDEREN - высокое качество, подтвержденное многочисленными тестированиями В активе производителя свыше 3000 наименований, но разработки и расширение ассортимента неустанно продолжаются. Ведущая отличительная особенность товаров MEDEREN - высокое качество, подтвержденное многочисленными тестированиями В активе производителя свыше 3000 наименований, но разработки и расширение ассортимента неустанно продолжаются. Ведущая отличительная особенность товаров MEDEREN - высокое качество, подтвержденное многочисленными тестированиями"
 				.modal-detail__company__buttons
-					.btn Запросить каталог
+					.btn.js-btn__order-catalog Запросить каталог
 
 	</div>
 	
