@@ -1376,6 +1376,7 @@ body {
         height: 100%;
         padding: 15px;
         transition: all 0.3s;
+        cursor: pointer;
         &:hover {
             transition: all 0.3s;
             background: $orange;
