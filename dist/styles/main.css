@@ -4315,6 +4315,18 @@ body {
   transition: all 0.3s;
 }
 
+.products__slide.swiper-slide-active .products__card .btn.btn--circle.btn--circle--orange {
+  color: #fff;
+}
+
+.products__slide.swiper-slide-active .products__card .btn.btn--circle.btn--circle--orange:hover {
+  transition: all 0.3s;
+}
+
+.products__slide.swiper-slide-active .products__card .btn.btn--circle.btn--circle--orange:hover .btn--circle__icon {
+  transition: all 0.3s;
+}
+
 .products__card {
   position: relative;
   display: flex;
@@ -5534,6 +5546,29 @@ body {
 
 .header__menu__item--contacts {
   margin-right: 37px;
+}
+
+.header__menu__item--btn::before {
+  position: absolute;
+  width: calc(100% - 2px);
+  height: 100%;
+  content: "";
+  background: #310606;
+  bottom: 0px;
+  left: 1px;
+  z-index: -1;
+  border-radius: 1000px;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.header__menu__item--btn:hover {
+  transition: all 0.3s;
+}
+
+.header__menu__item--btn:hover::before {
+  transition: all 0.3s;
+  bottom: -5px;
 }
 
 .header__menu__item:hover {

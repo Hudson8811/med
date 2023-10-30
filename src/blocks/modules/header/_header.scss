@@ -190,6 +190,26 @@
 				}
 			}
 			&--btn {
+					&::before {
+						position: absolute;
+						width: calc(100% - 2px);
+						height: 100%;
+						content: '';
+						background: #310606;
+						bottom: 0px;
+						left: 1px;
+						z-index: -1;
+						border-radius: 1000px;
+						transition: all 0.3s;
+						pointer-events: none;
+				}
+				&:hover {
+						transition: all 0.3s;
+						&::before {
+								transition: all 0.3s;
+								bottom: -5px;
+						}
+				}
 				&--desc {
 					@include max(xs) {
 						display: none;

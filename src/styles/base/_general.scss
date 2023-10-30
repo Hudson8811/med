@@ -900,6 +900,15 @@ body {
                         }
                     }
                 }
+                .btn.btn--circle.btn--circle--orange {
+                    color: #fff;
+                    &:hover {
+                        transition: all 0.3s;
+                        .btn--circle__icon {
+                            transition: all 0.3s;
+                        }
+                    }
+                }
             }
         }
     }
