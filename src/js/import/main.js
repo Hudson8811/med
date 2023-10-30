@@ -112,38 +112,46 @@ jQuery(function () {
 
 	})
 	function modalReg() {
-		event.preventDefault();
+		// event.preventDefault();
 		$.fancybox.open({
 			src: "#modal-reg",
 			type: "inline",
+			touch: false
 		});
 	}	
 	function modalDetail() {
-		event.preventDefault();
+		// event.preventDefault();
 		$.fancybox.open({
 			src: "#modal-detail",
 			type: "inline",
 			display: "flex",
+			touch: false
 			// defaultDisplay: "flex"
 		});
 		
 	}	
 	function modalDetailProduct() {
-		event.preventDefault();
+		// event.preventDefault();
 		$.fancybox.open({
 			src: "#modal-detail-product",
 			type: "inline",
+			touch: false
 		});
 		
 	}	
 	function modalRegCatalog() {
-		event.preventDefault();
+		// event.preventDefault();
 		$.fancybox.open({
 			src: "#modal-reg__catalog",
 			type: "inline",
+			touch: false
+
 		});
 		
 	}	
+	$(document).on('afterClose.fb', function( e, instance, slide ) {
+    bodyYesScroll();
+	});
 	function bodyNoScroll() {
 		let bodyBodymotionless = document.querySelector('body')
 		bodyBodymotionless.classList.add("Bodymotionless")
@@ -155,19 +163,23 @@ jQuery(function () {
 	}
 	$('.js-btn__order').on('click', function () {
 		modalReg();
-		// bodyNoScroll()
+		bodyNoScroll()
 	});
 	$('.js-btn__detail').on('click', function () {
 		modalDetail()
-		// bodyNoScroll()
+		bodyNoScroll()
 	});
 	$('.js-btn__detail-product').on('click', function () {
 		modalDetailProduct()
-		// bodyNoScroll()
+		bodyNoScroll()
 	});
 	$('.js-btn__order-catalog').on('click', function () {
-		modalRegCatalog();
-		// bodyNoScroll()
+		$.fancybox.close();
+		setTimeout(() => {
+			modalRegCatalog();
+			bodyNoScroll()
+		}, 500) 
+
 	});
 	if (document.documentElement.clientWidth < 767) {
 		tippy('.hint', {
@@ -235,5 +247,46 @@ jQuery(function () {
 		}
 	});
 	
+	$('.js-mask-phone').mask('+7(000)000-00-00');
+
 
 });
+
+
+function MapInit() {
+	const map = new ymaps.Map('js-map', {
+		center: [59.992339, 30.278166],
+		zoom: 10,
+		// type: 'yandex#satellite',
+		// Карта будет создана без
+		// элементов управления.
+		controls: []
+	});
+	if ($('.js-simple-point-map').length > 0) {
+		$(".contacts__office").on("click", function () {
+			$('.js-simple-point-map').each(function() {
+				var coor = $(this).attr('data-coords');
+	
+				var a = coor;
+				var xy = a.split(',');
+				var x = parseFloat(xy[0]);
+				var y = parseFloat(xy[1]);
+	
+		
+				
+				myPlacemark2 = new ymaps.Placemark([x, y],{},{
+						// iconLayout: 'default#image',
+						// iconImageHref: '/img/icons_map/predstvo_act.svg',
+						// iconImageSize: [48, 48],
+						// iconImageOffset: [-24, -24]
+				});
+	
+				// Добавляем метку на карту.
+				map.geoObjects.add(myPlacemark2);
+	
+			});
+		}) 
+
+	}
+}
+

@@ -644,13 +644,13 @@
           <div class="contacts__title title__100">Контакты</div>
         </div>
         <div class="contacts__map">
-          <div class="contacts__map__item"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aebeaff5254b284c038cedd4e4eace9ceb6df9e58d1e143167db02be7b369ebb9&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe></div>
+          <div class="contacts__map__item" id="js-map"></div>
         </div>
         <div class="container">
           <div class="contacts__info">
             <div class="contacts__offices">
               <div class="contacts__offices__col">
-                <div class="contacts__office">
+                <div class="contacts__office js-simple-point-map active" data-coords="59.992339, 30.278166">
                   <div class="contacts__office__icon"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="25" viewBox="0 0 21 25" fill="none">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M20.779 10.5522C20.779 16.1183 12.1037 23.7277 11.1144 24.5768C10.6984 24.9344 10.0827 24.9328 9.66895 24.5726C8.67534 23.7276 0 16.1182 0 10.5521C0 4.72423 4.65146 0 10.3895 0C16.1271 0 20.779 4.72449 20.779 10.5522ZM15.1121 9.9001C15.1121 12.3853 12.9977 14.4001 10.3896 14.4001C7.78146 14.4001 5.66709 12.3853 5.66709 9.9001C5.66709 7.41487 7.78146 5.4001 10.3896 5.4001C12.9977 5.4001 15.1121 7.41487 15.1121 9.9001Z" fill="#193762"/>
 </svg>
@@ -658,7 +658,7 @@
                   <div class="contacts__office__adress text__20">г. Санкт-Петербург 197183 ул. Полевая Сабировская, д 43, лит.Б
                   </div>
                 </div>
-                <div class="contacts__office">
+                <div class="contacts__office js-simple-point-map" data-coords="59.992339, 31.278166">
                   <div class="contacts__office__icon"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="25" viewBox="0 0 21 25" fill="none">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M20.779 10.5522C20.779 16.1183 12.1037 23.7277 11.1144 24.5768C10.6984 24.9344 10.0827 24.9328 9.66895 24.5726C8.67534 23.7276 0 16.1182 0 10.5521C0 4.72423 4.65146 0 10.3895 0C16.1271 0 20.779 4.72449 20.779 10.5522ZM15.1121 9.9001C15.1121 12.3853 12.9977 14.4001 10.3896 14.4001C7.78146 14.4001 5.66709 12.3853 5.66709 9.9001C5.66709 7.41487 7.78146 5.4001 10.3896 5.4001C12.9977 5.4001 15.1121 7.41487 15.1121 9.9001Z" fill="#193762"/>
 </svg>
@@ -666,7 +666,7 @@
                   <div class="contacts__office__adress text__20">г. Санкт-Петербург 197183 ул. Полевая Сабировская, д 43, лит.Б
                   </div>
                 </div>
-                <div class="contacts__office active">
+                <div class="contacts__office js-simple-point-map" data-coords="59.992339, 32.278166">
                   <div class="contacts__office__icon"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="25" viewBox="0 0 21 25" fill="none">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M20.779 10.5522C20.779 16.1183 12.1037 23.7277 11.1144 24.5768C10.6984 24.9344 10.0827 24.9328 9.66895 24.5726C8.67534 23.7276 0 16.1182 0 10.5521C0 4.72423 4.65146 0 10.3895 0C16.1271 0 20.779 4.72449 20.779 10.5522ZM15.1121 9.9001C15.1121 12.3853 12.9977 14.4001 10.3896 14.4001C7.78146 14.4001 5.66709 12.3853 5.66709 9.9001C5.66709 7.41487 7.78146 5.4001 10.3896 5.4001C12.9977 5.4001 15.1121 7.41487 15.1121 9.9001Z" fill="#193762"/>
 </svg>
@@ -679,8 +679,9 @@
                 <form class="contacts__form"> 
                   <div class="contacts__form__title"> Заказать звонок</div>
                   <input class="contacts__form__input" type="text" name="" placeholder="Имя">
-                  <input class="contacts__form__input js-mask-phone" type="email" name="" placeholder="Электронный адрес или телефон">
-                  <div class="contacts__form__bottom"> 
+                  <input class="contacts__form__input" type="email" name="" placeholder="Электронный адрес">
+                  <input class="contacts__form__input js-mask-phone" type="tel" name="" placeholder="Телефон">
+                  <div class="contacts__form__bottom">
                     <div class="contacts__form__btn btn">Отправить</div>
                     <div class="contacts__form__mess"><div class="checkbox">
 <input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
@@ -718,8 +719,9 @@
       <form class="contacts__form"> 
         <div class="contacts__form__title"> Заказать звонок</div>
         <input class="contacts__form__input" type="text" name="" placeholder="Имя">
-        <input class="contacts__form__input" type="email" name="" placeholder="Электронный адрес или телефон">
-        <div class="contacts__form__bottom"> 
+        <input class="contacts__form__input" type="email" name="" placeholder="Электронный адрес">
+        <input class="contacts__form__input js-mask-phone" type="tel" name="" placeholder="Телефон">
+        <div class="contacts__form__bottom">
           <div class="contacts__form__btn btn">Отправить</div>
           <div class="contacts__form__mess"><div class="checkbox">
 <input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
@@ -732,8 +734,9 @@
       <form class="contacts__form"> 
         <div class="contacts__form__title"> Запросить каталог</div>
         <input class="contacts__form__input" type="text" name="" placeholder="Имя">
-        <input class="contacts__form__input" type="email" name="" placeholder="Электронный адрес или телефон">
-        <div class="contacts__form__bottom"> 
+        <input class="contacts__form__input" type="email" name="" placeholder="Электронный адрес">
+        <input class="contacts__form__input js-mask-phone" type="tel" name="" placeholder="Телефон">
+        <div class="contacts__form__bottom">
           <div class="contacts__form__btn btn">Отправить</div>
           <div class="contacts__form__mess"><div class="checkbox">
 <input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo">
@@ -844,6 +847,6 @@
         </div>
       </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script><script src="https://api-maps.yandex.ru/2.1/?apikey=d30e0023-10b4-4a5c-a8fd-7e8d66094730&lang=ru_RU&onload=MapInit"></script>
   </body>
 </html>

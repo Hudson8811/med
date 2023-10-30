@@ -1375,6 +1375,7 @@ body {
         justify-content: space-between;
         border-radius: 30px;
         min-height: 315px;
+        height: 100%;
         padding: 15px;
         transition: all 0.3s;
         &:hover {
@@ -1608,11 +1609,11 @@ body {
             justify-content: space-between;
             align-items: flex-end;
             width: 100%;
-            position: absolute;
+            position: relative;
             left: 0;
-            bottom: 30px;
-            padding-left: 30px;
-            padding-right: 30px;
+            // bottom: 30px;
+            // padding-left: 30px;
+            // padding-right: 30px;
             @include max(sm) {
                 flex-flow: column nowrap;
                 position: relative;
@@ -1647,6 +1648,12 @@ body {
                 font-weight: 500;
                 line-height: 18px;                
             }
+            @media (max-width:1400px) {
+                max-width: 230px;
+            }
+            @include max(lg)  {
+                max-width: 280px;
+            }         
             @include max(sm)  {
                 max-width: 100%;
                 margin-top: 20px;

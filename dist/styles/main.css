@@ -4666,6 +4666,7 @@ body {
   justify-content: space-between;
   border-radius: 30px;
   min-height: 315px;
+  height: 100%;
   padding: 15px;
   transition: all 0.3s;
 }
@@ -4838,11 +4839,8 @@ body {
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
-  position: absolute;
+  position: relative;
   left: 0;
-  bottom: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 .contacts__form__btn {
@@ -6596,6 +6594,10 @@ body {
   .detailed-offer__slide__label--2 {
     right: 40px;
   }
+
+  .contacts__form__mess {
+    max-width: 230px;
+  }
 }
 
 @media (max-width: 1350px) {
@@ -6764,6 +6766,10 @@ body {
 
   .contacts__person__tel br {
     display: none;
+  }
+
+  .contacts__form__mess {
+    max-width: 280px;
   }
 
   .section__header .container {
