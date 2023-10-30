@@ -196,12 +196,16 @@ body {
         padding-top: 5px;
         content: url(../img/svg/btn-icon.svg)
     }
-    &:hover { 
-        transition: all 0.3s;
-        background: $blue;
-    }
     @include max(md) {
-        font-size: 12px;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 135%; /* 16.2px */
+        letter-spacing: 0.36px;
+        min-height: 45px;
+    }
+    @include max(xs) {
+        font-size: 14px;
         font-style: normal;
         font-weight: 500;
         line-height: 135%; /* 16.2px */
@@ -215,6 +219,7 @@ body {
         align-items: flex-start;
         min-height: 86px;
         min-width: 346px;
+        padding-right: 50px;
         &::after {
             position: absolute;
             display: block;
@@ -223,6 +228,10 @@ body {
             @include max(md) {
                 top: 18px;
             }
+            @include max(xs) {
+                top: 16px;
+                right: 20px;
+            }
         }
         &::before {
             position: absolute;
@@ -230,7 +239,7 @@ body {
             height: 100%;
             content: '';
             background: #310606;
-            bottom: -10px;
+            bottom: 0px;
             left: 1px;
             z-index: -1;
             border-radius: 1000px;
@@ -241,7 +250,7 @@ body {
             transition: all 0.3s;
             &::before {
                 transition: all 0.3s;
-                bottom: 0;
+                bottom: -10px;
             }
         }
         span {
@@ -255,6 +264,12 @@ body {
         }
         @include max(md) {
             min-height: 64px;
+        }
+        @include max(xs) {
+            min-height: 54px;
+            padding-left: 20px;
+            padding-right: 45px;
+            min-width: auto;
         }
     }
     &--circle {
@@ -270,13 +285,7 @@ body {
         padding-left: 0;
         padding-right: 0;
         transition: all 0.3s;
-        &:hover {
-            transition: all 0.3s;
-            .btn--circle__icon {
-                transition: all 0.3s;
-                background: none;
-            }
-        }
+
         &__icon {
             transition: all 0.3s;
             position: relative;
@@ -294,21 +303,43 @@ body {
                 position: absolute;
                 display: block;
                 content: url(../img/svg/btn-icon__2.svg)
-            }              
+            }      
         }
+
         &::after {
             display: none;
         } 
+        &:hover {
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.2);
+            padding-left: 20px;
+            .btn--circle__icon {
+                transition: all 0.3s;
+            }
+        }
         &--white {
-
             .btn--circle__icon {
                 background: rgba(255, 255, 255, 0.2);
             }
         }
         &--blue {
             color: $blue;
+            &:hover {
+                background: $blue;
+                color: #FFF;
+            }
             .btn--circle__icon {
                 background: $blue;
+            }
+        }
+        &--orange {
+            color: $orange;
+            &:hover {
+                background: $orange;
+                color: #FFF;
+            }
+            .btn--circle__icon {
+                background: $orange;
             }
         }
     }
@@ -341,7 +372,7 @@ body {
         font-size: 60px;
     }
     @include max(sm) {
-        font-size: 20px;
+        font-size: 40px;
         font-style: normal;
         font-weight: 700;
         line-height: 135%;
@@ -363,7 +394,7 @@ body {
         font-size: 60px;
     }
     @include max(sm) {
-        font-size: 20px;
+        font-size: 40px;
         font-style: normal;
         font-weight: 700;
         line-height: 135%;
@@ -415,6 +446,13 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+            @include max(sm) {
+                top: auto;
+                bottom: 0  ;
+                height: auto;
+                width: 100%;
+                flex-flow: row nowrap;
+            }
             .swiper-pagination-bullet {
                 width: 12px;
                 height: 12px;
@@ -457,6 +495,10 @@ body {
             @include max(lg) {
                 padding-right: 40px;
             }
+            @include max(sm) {
+                padding: 0;
+                padding-bottom: 60px;
+            }
            } 
            &:nth-child(2) {
             padding-left: 40px;
@@ -467,6 +509,9 @@ body {
             @include max(lg) {
                 width: 100%;
             }
+            @include max(sm) {
+                padding: 0;
+            }
            } 
         }
         &__title {
@@ -475,6 +520,9 @@ body {
             margin-bottom: 30px;
             @include max(lg) {
                max-width: 100%;
+            }
+            @include max(xs) {
+                font-size: 34px;
             }
             span {
                 opacity: 0.26;
@@ -531,12 +579,29 @@ body {
             background: rgba(255, 255, 255, 0.36);
             // backdrop-filter: blur(2px);
             text-align: center;
+            @include max(sm) {
+                width: 130px;
+                height: 130px;
+            }
             &__title {
                 margin-bottom: 9px;
+
                 span {
                     font-size: 44px;
                     font-style: normal;
                     font-weight: 700;
+                    @include max(sm) {
+                        font-size: 30px;
+                    }
+                }
+            }
+            &__subtitle {
+                @include max(sm) {
+                    font-size: 14px;
+                    line-height: 1.1;
+                    br {
+                        display: none;
+                    }
                 }
             }
             &--1 {
@@ -545,12 +610,18 @@ body {
                 @media (max-width: 1400px) {
                     left: 40px;
                 }
+                @include max(sm) {
+                    left: 10px;
+                }
             }
             &--2 {
                 top: 60px;
                 right: 0;
                 @media (max-width: 1400px) {
                     right: 40px;
+                }
+                @include max(sm) {
+                    right: 10px;
                 }
             }
         }
@@ -650,6 +721,7 @@ body {
     min-height: 932px;
     z-index: 9;
     padding-bottom: 64px;
+
     &--2 {
       margin-top: -30px;  
     }
@@ -680,6 +752,9 @@ body {
         background: #193762;
         // backdrop-filter: blur(17.5px);
         padding: 35px 32px 32px 23px;
+        @include max(lg) {
+            flex-flow: column nowrap;
+        }
         &__col {
             position: relative;
             display: flex;
@@ -688,14 +763,39 @@ body {
             align-items: flex-start;
             width: 33.333%;
             padding-left: 20px;
+            @include max(lg) {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            @include max(md) {
+                padding-left: 0;
+            }
             &:nth-child(1) {
                 justify-content: space-between;
+                @include max(lg) {
+                    flex-flow: row nowrap;
+                }
+                @include max(xs) {
+                    flex-flow: column nowrap;
+                }
+            }
+            &:last-child {
+                @include max(lg) {
+                    margin-bottom: 0;
+                }
             }
         }
         &__text {
             margin-bottom: 30px;
         }
+        &__btn {
+            margin-bottom: 40px;
+            @include max(md) {
+                min-width: 200px;
+            }
+        }
     }
+
     .container {
         display: flex;
         flex-flow: column nowrap;
@@ -714,6 +814,11 @@ body {
     background: $grey;
     padding-bottom: 34px;
     padding-top: 54px;
+    
+    @include max(sm) {
+        width: calc(100% + 32px);
+       
+    }
     &__slider {
         position: relative;
         display: flex;
@@ -722,6 +827,9 @@ body {
         width: 100%;
         overflow: hidden;
         min-height: 775px;
+        @include max(md) {
+            min-height: auto;
+        }
         .swiper-wrapper {
             align-items: flex-end;
         }
@@ -731,12 +839,16 @@ body {
         justify-content: flex-start;
         align-items: stretch;
         display: flex;
+        // max-width: 491px;
         &.swiper-slide-active {
             // transform: scaleY(1.2);
             .products__card {
                 background: $blue;
                 transition: all 0.6s;
                 min-height: 775px;
+                @include max(md) {
+                    min-height: auto;
+                }
                 &__title {
                     color: #FFF;
                 }
@@ -759,6 +871,9 @@ body {
                         height: 321px;
                         border-radius: 50%;
                         background: rgba(255, 255, 255, 0.11);
+                        @include max(sm) {
+                            display: none;
+                        }
                     }
                     img {
                         position: relative;
@@ -776,6 +891,14 @@ body {
                     .btn--circle__icon {
                         background: rgba(255, 255, 255, 0.2);
                     }
+                    &:hover {
+                        transition: all 0.3s;
+                        background: rgba(255, 255, 255, 0.2);
+                        padding-left: 20px;
+                        .btn--circle__icon {
+                            transition: all 0.3s;
+                        }
+                    }
                 }
             }
         }
@@ -792,6 +915,10 @@ body {
         transition: all 0.6s;
         border-radius: 32px;
         padding: 56px 32px 129px 32px;
+        @include max(sm) {
+            padding: 56px 20px 160px 20px;
+
+        }  
         &__label {
             position: absolute;
             top: 23px;
@@ -805,6 +932,21 @@ body {
             border-radius: 9px;
             padding: 14px 25px 14px 20px;
             z-index: 2;
+            @include max(md) {
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 135%; /* 16.2px */
+                letter-spacing: 0.36px;
+                padding: 10px 14px;
+            }
+            @include max(xs) {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 135%; /* 16.2px */
+                letter-spacing: 0.36px;
+            }
             
         }
         &__title {
@@ -813,7 +955,14 @@ body {
             font-size: 41.31px;
             font-style: normal;
             font-weight: 700;
-            line-height: 41.31px;           
+            line-height: 41.31px;
+            @include max(lg) {
+                font-size: 36px;
+                line-height: 1.2;
+            }          
+            @include max(sm) {
+                font-size: 25px;
+            }          
         }
         &__buttons {
             position: absolute;
@@ -825,6 +974,16 @@ body {
             justify-content: space-between;
             align-items: flex-start;
             width: 100%;
+            @include max(sm) {
+                flex-flow: column nowrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+            .btn {
+                &:first-child {
+                    margin-bottom: 20px;
+                }
+            }
         }
         &__picture {
             display: flex;
@@ -832,6 +991,10 @@ body {
             align-items: center;
             margin-bottom: 33px;
             // transform: scale(1);
+            @include max(sm) {
+                margin-bottom: 0;
+    
+            } 
             img {
                 position: relative;
                 display: block;
@@ -879,6 +1042,9 @@ body {
             align-items: stretch;
             height: auto;
             display: flex;
+            @include max(lg) {
+                width: 325px;
+            }
         }
         &__card {
             position: relative;
@@ -959,6 +1125,9 @@ body {
     padding-bottom:0px;
     padding-top: 64px;
     min-height: 481px;
+    @include max(sm) {
+        min-height: 340px;
+    }
     &__title {
         margin-bottom: 55px;
     }
@@ -1061,6 +1230,9 @@ body {
         margin-top: -175px;
         margin-bottom: 21px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08), 0px 0px 4px 0px rgba(0, 0, 0, 0.04);
+        @include max(lg) {
+            flex-flow: column nowrap;
+        }
         &__col {
             position: relative;
             display: flex;
@@ -1069,9 +1241,19 @@ body {
             flex-flow: row nowrap;
             &:nth-child(1) {
                 width: 60%;
+                @include max(lg) {
+                    width: 100%;
+                    margin-bottom: 30px;
+                }
+                @include max(md) {
+                    flex-flow: column nowrap;
+                }
             }
             &:nth-child(2) {
                 width: 40%;
+                @include max(lg) {
+                    width: 100%;
+                }
             }
 
         }
@@ -1088,6 +1270,20 @@ body {
         border-radius: 30px;
         min-height: 315px;
         padding: 15px;
+        @include max(lg) {
+            max-width: 100%;
+        }
+        @include max(md) {
+            margin-bottom: 30px;
+            min-height: 200px;
+
+        }
+        &:last-child {
+            @include max(md) {
+                margin-bottom: 0px;
+    
+            } 
+        }
         &__icon {
             position: relative;
             width: 70px;
@@ -1120,6 +1316,12 @@ body {
         width: 100%;
         border-radius: 30px;
         margin-bottom: 15px;
+        @include max(lg)  {
+            flex-flow: column nowrap;
+        }
+        @include max(sm)  {
+            padding: 20px;
+        }
         &__post {
             position: relative;
             display: flex;
@@ -1130,7 +1332,22 @@ body {
             font-size: 32px;
             font-style: normal;
             font-weight: 700;
-            line-height: 35.6px
+            line-height: 35.6px;
+            @include max(lg)  {
+                width: 100%;
+                margin-bottom: 15px;
+                br {
+                    display: none;
+                }
+            }
+            @include max(sm)  {
+                font-size: 28px;
+                line-height: 1.2;
+            }
+            @include max(xs)  {
+                font-size: 24px;
+                line-height: 1.2;
+            }
         }
         &__name {
             position: relative;
@@ -1141,6 +1358,13 @@ body {
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s;
+            @include max(lg)  {
+                width: 100%;
+                margin-bottom: 15px;
+                br {
+                    display: none;
+                }
+            }
             &:hover {
                 transition: all 0.3s;
                 text-decoration: underline;
@@ -1156,6 +1380,13 @@ body {
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s;
+            @include max(lg)  {
+                width: 100%;
+                margin-bottom: 15px;
+                br {
+                    display: none;
+                }
+            }
             &:hover {
                 transition: all 0.3s;
                 text-decoration: underline;
@@ -1171,6 +1402,14 @@ body {
             text-decoration: none;
             transition: all 0.3s;
             white-space: nowrap;
+            @include max(lg)  {
+                width: 100%;
+                margin-bottom: 0px;
+                justify-content: flex-start;
+                br {
+                    display: none;
+                }
+            }
             &:hover {
                 transition: all 0.3s;
                 text-decoration: underline;
@@ -1188,6 +1427,10 @@ body {
         border-radius: 30px;
         background: #193762;
         padding: 27px 30px;
+        min-height: 315px;
+        @include max(xs)  {
+            padding: 30px 20px;
+        }
         &__title {
             position: relative;
             display: block;
@@ -1196,7 +1439,11 @@ body {
             font-style: normal;
             font-weight: 700;
             line-height: 35.6px;
-            margin-bottom: 24px;            
+            margin-bottom: 24px;
+            @include max(xs)  {
+                font-size: 40px;
+                line-height: 1.2;
+            }         
         }
         &__input {
             color: #FFF;
@@ -1211,12 +1458,20 @@ body {
             border-radius: 1000px;
             border: none;
             background: rgba(255, 255, 255, 0.2);
+            @include max(xs)  {
+                font-size: 16px;
+                line-height: 1.2;
+            } 
             &::placeholder {
                 color: #FFF;
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 24px;
+                @include max(xs)  {
+                    font-size: 16px;
+                    line-height: 1.2;
+                } 
             }
         }
         &__bottom {
@@ -1230,7 +1485,19 @@ body {
             bottom: 30px;
             padding-left: 30px;
             padding-right: 30px;
-
+            @include max(xs) {
+                flex-flow: column nowrap;
+                position: relative;
+                justify-content: flex-start;
+                align-items: flex-start;
+                left: 0;
+                bottom: auto; 
+                padding-left: 0px; 
+                padding-right: 0px;
+            }
+        }
+        &__btn {
+            margin-top: 30px;
         }
         &__mess {
             position: relative;
@@ -1240,13 +1507,20 @@ body {
             font-style: normal;
             font-weight: 500;
             line-height: 18px;
-            max-width: 232px;           
+            max-width: 232px; 
+            @include max(xs)  {
+                max-width: 100%;
+                margin-top: 20px;
+            }         
         }
     }
 }
 .modal-reg {
     padding: 0;
     border-radius: 30px;
+    @include max(md) {
+        max-width: 95%;
+    }
     .fancybox-close-small {
        background: $grey;
        width: 57px;
@@ -1257,11 +1531,21 @@ body {
        align-items: center;
        top: 24px;
        right: 24px;
+       @include max(sm) {
+            width:35px;
+            height:35px;
+            top: 15px;
+            right: 15px;
+        }
     }
     .fancybox-button svg {
         width: 50%;
         height: 50%;
         fill: $blue;
+        @include max(sm) {
+            width:25px;
+            height:25px;
+        }
         path {
             fill: $blue;  
         }
@@ -1270,6 +1554,9 @@ body {
         min-height: 430px;
         background: #fff;
         width: 438px;
+        @include max(md) {
+            width: 100%;
+        }
         &__title {
             color: $blue;
             font-size: 58px;
@@ -1279,6 +1566,9 @@ body {
             width: 100%;
             max-width: 330px;
             margin-bottom: 40px;
+            @include max(xs) {
+                font-size: 36px;
+            }
         }
         &__input {
             color: $blue;
@@ -1295,12 +1585,18 @@ body {
             font-weight: 500;
             line-height: 25px;
             max-width: 100%;
-            margin-bottom: 25px;
+            margin-bottom: 0px;
         }
         &__bottom  {
+            position: relative;
             flex-flow: column-reverse nowrap;
             justify-content: flex-start;
             align-items: flex-start;
+            bottom: auto;
+            left: auto;
+            padding-left: 0;
+            padding-right: 0;
+
         }
     }
 }
@@ -1312,7 +1608,7 @@ body {
 }
 .modal-detail {
     height: 100%;
-    width: 73.33vw;
+    width: 100vw;
     max-width: 1059px;
     position: absolute;
     right: 0;
@@ -1329,24 +1625,34 @@ body {
     align-items: flex-start;
     overflow: hidden;
     .fancybox-close-small {
-       background: $grey;
-       width: 57px;
-       height: 57px;
-       border-radius: 50%;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       top: 24px;
-       right: 24px;
-    }
-    .fancybox-button svg {
-        width: 50%;
-        height: 50%;
-        fill: $blue;
-        path {
-            fill: $blue;  
-        }
-    }
+        background: $grey;
+        width: 57px;
+        height: 57px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 24px;
+        right: 24px;
+        @include max(sm) {
+             width:35px;
+             height:35px;
+             top: 15px;
+             right: 15px;
+         }
+     }
+     .fancybox-button svg {
+         width: 50%;
+         height: 50%;
+         fill: $blue;
+         @include max(sm) {
+             width:25px;
+             height:25px;
+         }
+         path {
+             fill: $blue;  
+         }
+     }
     &__bg {
         position: absolute;
         top:0;
@@ -1377,6 +1683,10 @@ body {
         margin-right: 0;
         border-radius: 30px 0 0 30px;
         overflow: hidden;
+        @include max(xs) {
+            padding: 20px;
+            padding-bottom: 0;
+        } 
 
         &__title {
             color: $blue;
@@ -1386,7 +1696,11 @@ body {
             line-height: 46px;
             margin-bottom: 31px;
             width: 100%;
-            max-width: 290px;        
+            max-width: 290px;
+            @include max(xs) {
+                font-size: 40px;
+                line-height: 1.2;
+            }     
         }
         &__text {
             position: relative;
@@ -1422,6 +1736,12 @@ body {
             padding-top: 26px;
             border-radius: 30px 30px 0 0;
             margin-left: -42px;
+            @include max(xs) {
+                margin-left: -20px;
+                min-height: 70px;
+                padding-left: 20px;
+                padding-top: 15px;
+            } 
         }
     }
 }
@@ -1437,25 +1757,36 @@ body {
     border-radius: 40px 0 0 40px;
     background: $grey;
     overflow: hidden;
+
     .fancybox-close-small {
-       background: $grey;
-       width: 57px;
-       height: 57px;
-       border-radius: 50%;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       top: 24px;
-       right: 24px;
-    }
-    .fancybox-button svg {
-        width: 50%;
-        height: 50%;
-        fill: $blue;
-        path {
-            fill: $blue;  
-        }
-    }
+        background: $grey;
+        width: 57px;
+        height: 57px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 24px;
+        right: 24px;
+        @include max(sm) {
+             width:35px;
+             height:35px;
+             top: 15px;
+             right: 15px;
+         }
+     }
+     .fancybox-button svg {
+         width: 50%;
+         height: 50%;
+         fill: $blue;
+         @include max(sm) {
+             width:25px;
+             height:25px;
+         }
+         path {
+             fill: $blue;  
+         }
+     }
     &__bg {
         position: absolute;
         top:0;
@@ -1547,6 +1878,9 @@ body {
         align-items: center;
         width: 100%;
         max-width: 445px;
+        @include max(md) {
+            display: none;
+        }
         &::before {
             position: relative;
             width: 100%;
@@ -1570,6 +1904,9 @@ body {
         align-items: stretch;
         width: 100%;
         height: 100%;
+        // @include max(md) {
+        //     flex-flow: column nowrap;
+        // }
     }
 }
 

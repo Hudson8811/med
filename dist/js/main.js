@@ -2587,9 +2587,9 @@ jQuery(function () {
 			// watchSlidesProgress: true,
 			// preventInteractionOnTransition: true,
 			loop: true,
-			centeredSlides: true,
+			centeredSlides: false,
 			spaceBetween: 25,
-			slidesPerView: 3,
+			slidesPerView: 1.2,
 			navigation: {
 				nextEl: slider.find('.swiper-button-next')[0],
 				prevEl: slider.find('.swiper-button-prev')[0]
@@ -2599,6 +2599,25 @@ jQuery(function () {
 				type: 'bullets',
 				clickable: true
 			},
+			breakpoints: {
+			    // when window width is >= 480px
+			  1250: {
+			        slidesPerView: 3,
+			        spaceBetween: 25,
+							centeredSlides: true,
+							loop: true,
+			    },
+			  992: {
+			        slidesPerView: 2,
+							centeredSlides: true,
+			        spaceBetween: 25
+			    },
+			  768: {
+			        slidesPerView: 1.5,
+							centeredSlides: true,
+			        spaceBetween: 25
+			    },
+			}			
 		});
 
 	})
@@ -2613,16 +2632,17 @@ jQuery(function () {
 			// loop: true,
 			// centeredSlides: true,
 			spaceBetween: 25,
-			slidesPerView: 4,
+			slidesPerView: "auto",
 			navigation: {
 				nextEl: ".customer__swiper-button-next",
 				prevEl: ".customer__swiper-button-prev"
 			},
-			// pagination: {
-			// 	el: slider.find('.swiper-pagination')[0],
-			// 	type: 'bullets',
-			// 	clickable: true
-			// },
+			breakpoints: {
+				// when window width is >= 480px
+			1250: {
+						slidesPerView: 4,
+				},
+		}		
 		});
 
 	})

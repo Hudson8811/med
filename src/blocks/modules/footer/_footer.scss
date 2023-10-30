@@ -8,12 +8,20 @@
 	padding-top: 30px;
 	padding-bottom: 30px;
 	color: #fff;
+	@include max(md)  {
+		flex-flow: column nowrap;
+	}
 	&__wrap {
 		position: relative;
 		display: flex;
 		width: 100%;
 		justify-content: space-between;
 		align-items: flex-end;
+		@include max(md)  {
+			flex-flow: column nowrap;
+			justify-content: flex-start;
+			align-items: center;
+		}
 	}
 	&__text {
 		position: relative;
@@ -21,13 +29,36 @@
 		font-size: 20px;
 		font-style: normal;
 		font-weight: 500;
-		line-height: 18px
+		line-height: 18px;
+		@include max(md)  {
+			br {
+				display: none;
+			}
+			
+		}
+	}
+	&__col {
+		@include max(md)  {
+			display: flex;
+			width: 100%;
+			flex-flow: column nowrap;
+			justify-content: flex-start;
+			align-items: center;
+			margin-bottom: 20px;
+
+		}
 	}
 	&__contacts {
 		position: relative;
 		display: flex;
 		justify-content: flex-end;
 		align-items: flex-end;
+		@include max(md)  {
+			flex-flow: column nowrap;
+			justify-content: flex-start;
+			align-items: center;
+			
+		}
 	}
 	&__soc {
 		position: relative;
@@ -55,6 +86,11 @@
 		font-weight: 500;
 		line-height: 18px;
 		margin-right: 46px;
+		@include max(md)  {
+			margin-bottom: 20px;
+			margin-right: 0;
+			
+		}
 	}
 
 }
