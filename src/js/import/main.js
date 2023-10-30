@@ -102,9 +102,11 @@ jQuery(function () {
 			// centeredSlides: true,
 			slidesPerView: 'auto',
 			// setWrapperSize: true,
+			allowTouchMove: false,
 			autoplay: {
 				delay: 0,
 				// reverseDirection: true,
+				disableOnInteraction: false,
 			},	
 		});
 

@@ -4535,6 +4535,11 @@ body {
   overflow: hidden;
 }
 
+.partners__slider .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+
 .partners__slide {
   position: relative;
   justify-content: center;
