@@ -1134,6 +1134,8 @@ body {
     padding-bottom:0px;
     padding-top: 64px;
     min-height: 481px;
+    flex-flow: column nowrap;
+    align-items: center;
     @include max(sm) {
         min-height: 340px;
     }
