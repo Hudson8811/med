@@ -3788,6 +3788,29 @@ body {
   margin-bottom: 2px;
 }
 
+.btn--shadow-mini::before {
+  position: absolute;
+  width: calc(100% - 2px);
+  height: 100%;
+  content: "";
+  background: #310606;
+  bottom: 0px;
+  left: 1px;
+  z-index: -1;
+  border-radius: 1000px;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.btn--shadow-mini:hover {
+  transition: all 0.3s;
+}
+
+.btn--shadow-mini:hover::before {
+  transition: all 0.3s;
+  bottom: -5px;
+}
+
 .btn--circle {
   min-height: 45px;
   display: flex;
@@ -4187,6 +4210,7 @@ body {
   border-radius: 42px;
   background: #193762;
   padding: 35px 32px 32px 23px;
+  z-index: 0;
 }
 
 .company__list__col {
@@ -4798,6 +4822,7 @@ body {
   background: #193762;
   padding: 27px 30px;
   min-height: 315px;
+  z-index: 0;
 }
 
 .contacts__form__title {
@@ -4848,6 +4873,29 @@ body {
   margin-top: 30px;
 }
 
+.contacts__form__btn::before {
+  position: absolute;
+  width: calc(100% - 2px);
+  height: 100%;
+  content: "";
+  background: #310606;
+  bottom: 0px;
+  left: 1px;
+  z-index: -1;
+  border-radius: 1000px;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.contacts__form__btn:hover {
+  transition: all 0.3s;
+}
+
+.contacts__form__btn:hover::before {
+  transition: all 0.3s;
+  bottom: -5px;
+}
+
 .contacts__form__mess {
   position: relative;
   width: 100%;
@@ -4869,6 +4917,11 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
+}
+
+.ymaps-2-1-79-ground-pane,
+.ymaps-b-global {
+  filter: grayscale(100%);
 }
 
 .modal-reg {
@@ -5046,6 +5099,7 @@ body {
   margin-right: 0;
   border-radius: 30px 0 0 30px;
   overflow: hidden;
+  z-index: 0;
 }
 
 .modal-detail__company__title {
