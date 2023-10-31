@@ -254,37 +254,51 @@ jQuery(function () {
 
 
 function MapInit() {
-	const map = new ymaps.Map('js-map', {
-		center: [59.992339, 30.278166],
-		zoom: 10,
-		// type: 'yandex#satellite',
-		// Карта будет создана без
-		// элементов управления.
-		controls: []
-	});
+
 	if ($('.js-simple-point-map').length > 0) {
+		const map = new ymaps.Map('js-map', {
+			center: [59.992339, 30.278166],
+			zoom: 10,
+			// type: 'yandex#satellite',
+			// Карта будет создана без
+			// элементов управления.
+			controls: []
+		});
+		myPlacemark2 = new ymaps.Placemark([59.992339, 30.278166],{},{
+			iconLayout: 'default#image',
+			iconImageHref: '/img/svg/predstvo_act.svg',
+			iconImageSize: [26, 26],
+			iconImageOffset: [-13, -13]
+	});
+
+	// Добавляем метку на карту.
+	map.geoObjects.add(myPlacemark2);
 		$(".contacts__office").on("click", function () {
-			$('.js-simple-point-map').each(function() {
+				$('.contacts__office').each(function() {
+					var office = $(this);
+					office.removeClass( "active" )
+				});
+				$(this).addClass( "active" );
 				var coor = $(this).attr('data-coords');
-	
+				console.log (coor)
 				var a = coor;
 				var xy = a.split(',');
 				var x = parseFloat(xy[0]);
 				var y = parseFloat(xy[1]);
-	
-		
+
+
 				
 				myPlacemark2 = new ymaps.Placemark([x, y],{},{
-						// iconLayout: 'default#image',
-						// iconImageHref: '/img/icons_map/predstvo_act.svg',
-						// iconImageSize: [48, 48],
-						// iconImageOffset: [-24, -24]
+						iconLayout: 'default#image',
+						iconImageHref: '/img/svg/predstvo_act.svg',
+						iconImageSize: [26, 26],
+						iconImageOffset: [-13, -13]
 				});
-	
+
 				// Добавляем метку на карту.
 				map.geoObjects.add(myPlacemark2);
-	
-			});
+				map.setCenter([x, y]);
+
 		}) 
 
 	}
