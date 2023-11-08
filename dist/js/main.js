@@ -2752,7 +2752,7 @@ jQuery(function () {
 		modalDetail()
 		bodyNoScroll()
 	});
-	$('.js-btn__detail-product').on('click', function () {
+    $('.js-btn__detail-product').on('click', function () {
         let name = $(this).data('name');
         let text = htmlspecialchars_decode($(this).data('text'));
         let img = $(this).data('img');
@@ -2763,9 +2763,38 @@ jQuery(function () {
         }
         $('#modal-detail-product .modal-detail__company__text .text__20').html(text);
         $('#modal-detail-product .modal-detail__company__title').text(name);
-		modalDetailProduct()
-		bodyNoScroll()
-	});
+
+        try {
+            let dots = $(this).data('dots');
+            let id = $(this).data('id');
+            $('.hint__product').remove();
+            $('.hint__list').remove();
+            let i = 0;
+            dots.forEach(function (elem){
+                i++;
+                let x = elem.x;
+                let y = elem.y;
+                let text = elem.text;
+                let html = '<div class="hint hint__product" data-template="product__'+id+'_'+i+'" style="left:'+x+'; top:'+y+'; ">\n' +
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="34" height="35" viewBox="0 0 34 35" fill="none">\n' +
+                    '<circle opacity="0.2" cx="16.9746" cy="17.6502" r="16.9746" fill="#E83B3B"/>\n' +
+                    '<circle cx="16.6662" cy="17.5866" r="8.72874" fill="#E83B3B"/>\n' +
+                    '</svg>\n' +
+                    '</div>';
+                $('.hints__product').prepend(html);
+
+                let html2 = '<div class="hint__list" id="product__'+id+'_'+i+'">\n' +
+                    text+'\n' +
+                    '</div>';
+                $('.hint__lists').prepend(html2);
+            });
+            initHints()
+        } catch (error) {
+            console.error("Ошибка при декодировании JSON: " + error.message);
+        }
+        modalDetailProduct()
+        bodyNoScroll()
+    });
     function htmlspecialchars_decode(str) {
         var element = document.createElement('textarea');
         element.innerHTML = str;
@@ -2779,37 +2808,40 @@ jQuery(function () {
 			bodyNoScroll()
 		}, 500)
 	});
-	if (document.documentElement.clientWidth < 767) {
-		tippy('.hint', {
-			content(reference) {
-				const id = reference.getAttribute('data-template');
-				const template = document.getElementById(id);
-				return template.innerHTML;
-			},
-			theme: 'tomato',
-			zIndex:	99993,
-			arrow: "none",
-			allowHTML: true,
-			// placement: 'right',
-			inlinePositioning: true,
-		
-		});
-	} else {
-		tippy('.hint', {
-			content(reference) {
-				const id = reference.getAttribute('data-template');
-				const template = document.getElementById(id);
-				return template.innerHTML;
-			},
-			theme: 'tomato',
-			arrow: "none",
-			allowHTML: true,
-			zIndex:		99993,
-			placement: 'right',
-			inlinePositioning: true,
-		
-		});
-	};
+    function initHints(){
+        if (document.documentElement.clientWidth < 767) {
+            tippy('.hint', {
+                content(reference) {
+                    const id = reference.getAttribute('data-template');
+                    const template = document.getElementById(id);
+                    return template.innerHTML;
+                },
+                theme: 'tomato',
+                zIndex:	99993,
+                arrow: "none",
+                allowHTML: true,
+                // placement: 'right',
+                inlinePositioning: true,
+
+            });
+        } else {
+            tippy('.hint', {
+                content(reference) {
+                    const id = reference.getAttribute('data-template');
+                    const template = document.getElementById(id);
+                    return template.innerHTML;
+                },
+                theme: 'tomato',
+                arrow: "none",
+                allowHTML: true,
+                zIndex:		99993,
+                placement: 'right',
+                inlinePositioning: true,
+
+            });
+        };
+    }
+    initHints();
 
 	
 	let overlayBg = document.querySelector(".mob-menu--overlay");
