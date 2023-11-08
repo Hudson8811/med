@@ -2746,7 +2746,7 @@ jQuery(function () {
         let name = $(this).data('name');
         let text = htmlspecialchars_decode($(this).data('text'));
         let img = $(this).data('img');
-        $('#modal-detail .modal-detail').css('background-image', img);
+        $('#modal-detail.modal-detail').css('background-image', 'url('+img+')');
         $('#modal-detail .modal-detail__company__text .text__20').html(text);
         $('#modal-detail .modal-detail__company__title').text(name);
 		modalDetail()

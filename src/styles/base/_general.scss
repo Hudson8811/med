@@ -769,6 +769,11 @@ body {
             align-items: center;
             background: #fff;
             border-radius: 50%;
+			img{
+				max-height: 100%;
+				max-width: 100%;
+				display: block;
+			}
         }
         &__num {
             position: relative;
@@ -1183,9 +1188,10 @@ body {
                 right: 22px;
                 display: flex;
                 justify-content: flex-end;
-                align-items: flex-start;
+                align-items: center;
                 width: auto;
                 max-height: 103px;
+                height: 103px;
                 padding: 30px;
                 background: #fff;
                 border-radius: 23px;
@@ -1194,8 +1200,9 @@ body {
                     position: relative;
                     display: block;
                     // width: 100%;
-                    height: 100%;
+                    max-height: 100%;
                     object-fit: contain;
+					max-width: 100%;
                 }
             }
             &__picture {
@@ -1205,6 +1212,8 @@ body {
                 align-items: flex-start;
                 width: 100%;
                 margin-bottom: 23px;
+				border-radius: 32px;
+				overflow: hidden;
                 &::before {
                     position: relative;
                     content: '';
@@ -1237,7 +1246,6 @@ body {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
     margin-top: -30px;
     z-index: 9;
     background: #fff;
@@ -1519,10 +1527,11 @@ body {
                     display: none;
                 }
             }
-            &:hover {
+            &[href]:hover {
                 transition: all 0.3s;
                 text-decoration: underline;
             }
+
 
         }
         &__mail {
@@ -1835,6 +1844,7 @@ body {
     justify-content: flex-end;
     align-items: flex-start;
     overflow: hidden;
+	border-radius: 40px 0 0 40px;
     .fancybox-close-small {
         background: $grey;
         width: 57px;
@@ -1908,7 +1918,8 @@ body {
             line-height: 46px;
             margin-bottom: 31px;
             width: 100%;
-            max-width: 290px;
+			max-width: 340px;
+			word-break: break-word;
             @include max(xs) {
                 font-size: 40px;
                 line-height: 1.2;
@@ -2133,7 +2144,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: all 0.35;
+      transition: all 0.35s;
       cursor: pointer;
       svg {
         @include max(sm) {
@@ -2241,26 +2252,7 @@ body {
       }
     }
     &__product {
-        &__1 {
-            .hint {
-                &:nth-child(1) {
-                    left: 0;
-                    bottom: 25px;
-                }
-                &:nth-child(2) {
-                    left: 155px;
-                    bottom: 20px;
-                }
-                &:nth-child(3) {
-                    left: 50px;
-                    bottom: 130px;
-                }
-                &:nth-child(4) {
-                    left: 245px;
-                    bottom: 187px;
-                }
-            } 
-        }
+
     }
 }
 .tippy-box[data-theme~='tomato'] {
