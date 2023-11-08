@@ -2688,7 +2688,7 @@ jQuery(function () {
 
 	})
 	function modalReg() {
-		// event.preventDefault();
+        $('#modal-reg .contacts__form__title').text('Заказать звонок');
 		$.fancybox.open({
 			src: "#modal-reg",
 			type: "inline",
@@ -2716,9 +2716,9 @@ jQuery(function () {
 		
 	}	
 	function modalRegCatalog() {
-		// event.preventDefault();
+        $('#modal-reg .contacts__form__title').text('Запросить каталог');
 		$.fancybox.open({
-			src: "#modal-reg__catalog",
+			src: "#modal-reg",
 			type: "inline",
 			touch: false
 
@@ -2738,24 +2738,46 @@ jQuery(function () {
 		bodyBodymotionless.classList.remove("Bodymotionless")
 	}
 	$('.js-btn__order').on('click', function () {
+	    event.preventDefault();
 		modalReg();
 		bodyNoScroll()
 	});
 	$('.js-btn__detail').on('click', function () {
+        let name = $(this).data('name');
+        let text = htmlspecialchars_decode($(this).data('text'));
+        let img = $(this).data('img');
+        $('#modal-detail .modal-detail').css('background-image', img);
+        $('#modal-detail .modal-detail__company__text .text__20').html(text);
+        $('#modal-detail .modal-detail__company__title').text(name);
 		modalDetail()
 		bodyNoScroll()
 	});
 	$('.js-btn__detail-product').on('click', function () {
+        let name = $(this).data('name');
+        let text = htmlspecialchars_decode($(this).data('text'));
+        let img = $(this).data('img');
+        if (img !== ''){
+            $('#modal-detail-product .modal-detail-product__img img').attr('src', img).show();
+        } else {
+            $('#modal-detail-product .modal-detail-product__img img').hide();
+        }
+        $('#modal-detail-product .modal-detail__company__text .text__20').html(text);
+        $('#modal-detail-product .modal-detail__company__title').text(name);
 		modalDetailProduct()
 		bodyNoScroll()
 	});
+    function htmlspecialchars_decode(str) {
+        var element = document.createElement('textarea');
+        element.innerHTML = str;
+        return element.value;
+    }
 	$('.js-btn__order-catalog').on('click', function () {
+        event.preventDefault();
 		$.fancybox.close();
 		setTimeout(() => {
 			modalRegCatalog();
 			bodyNoScroll()
-		}, 500) 
-
+		}, 500)
 	});
 	if (document.documentElement.clientWidth < 767) {
 		tippy('.hint', {
@@ -2830,6 +2852,10 @@ jQuery(function () {
 
 
 function MapInit() {
+    let assetsUrl = '';
+    if (typeof templateUrl !== 'undefined') {
+        assetsUrl = templateUrl;
+    }
 
 	if ($('.js-simple-point-map').length > 0) {
 		const map = new ymaps.Map('js-map', {
@@ -2842,7 +2868,7 @@ function MapInit() {
 		});
 		myPlacemark2 = new ymaps.Placemark([59.992339, 30.278166],{},{
 			iconLayout: 'default#image',
-			iconImageHref: '/img/svg/predstvo_act.svg',
+			iconImageHref: assetsUrl +'/img/svg/predstvo_act.svg',
 			iconImageSize: [26, 26],
 			iconImageOffset: [-13, -13]
 	});
@@ -2856,7 +2882,6 @@ function MapInit() {
 				});
 				$(this).addClass( "active" );
 				var coor = $(this).attr('data-coords');
-				console.log (coor)
 				var a = coor;
 				var xy = a.split(',');
 				var x = parseFloat(xy[0]);
@@ -2866,12 +2891,11 @@ function MapInit() {
 				
 				myPlacemark2 = new ymaps.Placemark([x, y],{},{
 						iconLayout: 'default#image',
-						iconImageHref: '../img/svg/predstvo_act.svg',
+						iconImageHref: assetsUrl + '/img/svg/predstvo_act.svg',
 						iconImageSize: [26, 26],
 						iconImageOffset: [-13, -13]
 				});
 
-				// Добавляем метку на карту.
 				map.geoObjects.add(myPlacemark2);
 				map.setCenter([x, y]);
 

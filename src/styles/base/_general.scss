@@ -189,6 +189,7 @@ body {
     background: $orange;
     border-radius: 1000px;
     transition: all 0.3s;
+	border: 0;
     &::after {
         position: relative;
         display: block;
@@ -1280,6 +1281,8 @@ body {
             // height: 100%;
             object-fit: contain;
             object-position: center center;
+			max-width: 100%;
+			max-height: 100%;
         }
     }
 }
