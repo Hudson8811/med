@@ -4036,6 +4036,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+  aspect-ratio: 1.199;
 }
 
 .detailed-offer__slide__picture picture,
@@ -4044,8 +4045,9 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
+  aspect-ratio: 1.199;
 }
 
 .detailed-offer__slide__label {
@@ -4661,18 +4663,15 @@ body {
 
 .contacts__offices {
   position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
   width: 100%;
   padding: 18px 20px;
-  background: #fff;
   min-height: 350px;
   border-radius: 42px;
   background: #FFF;
   margin-top: -175px;
   margin-bottom: 21px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08), 0px 0px 4px 0px rgba(0, 0, 0, 0.04);
+  display: block;
 }
 
 .contacts__offices__col {
@@ -4684,18 +4683,18 @@ body {
 }
 
 .contacts__offices__col:nth-child(1) {
-  width: 60%;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .contacts__offices__col:nth-child(2) {
-  width: 40%;
+  width: 100%;
 }
 
 .contacts__office {
   position: relative;
   display: flex;
   width: 100%;
-  max-width: 253px;
   margin-right: 15px;
   background: #E8EBEF;
   flex-flow: column nowrap;
@@ -4874,14 +4873,11 @@ body {
 .contacts__form__bottom {
   display: flex;
   align-self: flex-end;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
   position: relative;
   left: 0;
-}
-
-.contacts__form__btn {
   margin-top: 30px;
 }
 
@@ -4916,7 +4912,8 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
-  max-width: 252px;
+  max-width: calc(100% - 250px);
+  margin-left: 30px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -4929,6 +4926,10 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
+}
+
+.contacts__form__mess .custom-checkbox + label::before {
+  margin-top: 0;
 }
 
 .ymaps-2-1-79-ground-pane,
@@ -4998,6 +4999,7 @@ body {
   line-height: 25px;
   max-width: 100%;
   margin-bottom: 0px;
+  margin-left: 0;
 }
 
 .modal-reg .contacts__form__mess .checkbox {
@@ -5018,6 +5020,10 @@ body {
   line-height: 25px;
 }
 
+.modal-reg .contacts__form__mess .custom-checkbox + label::before {
+  margin-top: 3px;
+}
+
 .modal-reg .contacts__form__bottom {
   position: relative;
   flex-flow: column-reverse nowrap;
@@ -5027,6 +5033,11 @@ body {
   left: auto;
   padding-left: 0;
   padding-right: 0;
+  margin-top: 0;
+}
+
+.modal-reg .contacts__form__btn {
+  margin-top: 30px;
 }
 
 .fancybox-bg {
@@ -6643,10 +6654,6 @@ body {
   .detailed-offer__slide__label--2 {
     right: 40px;
   }
-
-  .contacts__form__mess {
-    max-width: 230px;
-  }
 }
 
 @media (max-width: 1350px) {
@@ -6759,21 +6766,14 @@ body {
     width: 325px;
   }
 
-  .contacts__offices {
-    flex-flow: column nowrap;
-  }
-
   .contacts__offices__col:nth-child(1) {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-
-  .contacts__offices__col:nth-child(2) {
-    width: 100%;
+    flex-flow: column nowrap;
   }
 
   .contacts__office {
     max-width: 100%;
+    margin-bottom: 30px;
+    min-height: 200px;
   }
 
   .contacts__person {
@@ -6815,10 +6815,6 @@ body {
 
   .contacts__person__tel br {
     display: none;
-  }
-
-  .contacts__form__mess {
-    max-width: 280px;
   }
 
   .section__header .container {
@@ -6980,15 +6976,6 @@ body {
     /* 16.2px */
     letter-spacing: 0.36px;
     padding: 10px 14px;
-  }
-
-  .contacts__offices__col:nth-child(1) {
-    flex-flow: column nowrap;
-  }
-
-  .contacts__office {
-    margin-bottom: 30px;
-    min-height: 200px;
   }
 
   .contacts__office:last-child {
@@ -7217,6 +7204,7 @@ body {
   .contacts__form__mess {
     max-width: 100%;
     margin-top: 20px;
+    margin-left: 0;
   }
 
   .modal-reg .fancybox-close-small {
