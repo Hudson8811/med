@@ -551,6 +551,8 @@ body {
             width: 100%;
             max-width: 663px;
             margin-bottom: 30px;
+			font-size: 62px;
+			line-height: 1;
             @include max(lg) {
                max-width: 100%;
             }
@@ -608,22 +610,22 @@ body {
             justify-content: center;
             align-items: center;
             flex-flow: column nowrap;
-            width: 192px;
-            height: 192px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.36);
             // backdrop-filter: blur(2px);
             text-align: center;
             @include max(sm) {
-                width: 130px;
-                height: 130px;
+                width: 180px;
+                height: 180px;
                 background: rgba(255, 255, 255, 1);
                 margin-right: 20px;
 
             }
             @include max(xs) {
-                width: 118px;
-                height: 118px;
+                width: 130px;
+                height: 130px;
 
             }
             &__title {
@@ -636,12 +638,14 @@ body {
                 //     justify-content: flex-start;
                 //     align-items: center;
                 // }
+				hyphens: auto;
+				hyphenate-limit-chars: 6 3 3;
                 span {
-                    font-size: 44px;
+                    font-size: 37px;
                     font-style: normal;
                     font-weight: 700;
                     @include max(sm) {
-                        font-size: 30px;
+                        font-size: 25px;
                     }
                     @include max(xs) {
                         font-size: 20px;
@@ -683,11 +687,12 @@ body {
                 }
                 @include max(sm) {
                     right: auto;
-                    left: 160px;
+                    left: 210px;
                     top: 30px;
                 }
                 @include max(xs) {
                     top: 10px;
+					left: 160px;
 
                 }
             }
@@ -839,6 +844,10 @@ body {
         @include max(lg) {
             flex-flow: column nowrap;
         }
+		&__title{
+			line-height: 1.1 !important;
+			margin-top: -0.1em;
+		}
         &__col {
             position: relative;
             display: flex;
@@ -1067,18 +1076,24 @@ body {
         &__title {
             color: $blue;
             margin-bottom: 15px;
-            font-size: 41.31px;
+            font-size: 32px;
             font-style: normal;
             font-weight: 700;
-            line-height: 41.31px;
+            line-height: 1.2;
+			hyphens: auto;
+			hyphenate-limit-chars: 6 3 3;
             @include max(lg) {
-                font-size: 36px;
+                font-size: 28px;
                 line-height: 1.2;
             }          
             @include max(sm) {
                 font-size: 25px;
             }          
         }
+		&__text{
+			hyphens: auto;
+			hyphenate-limit-chars: 6 3 3;
+		}
         &__buttons {
             position: absolute;
             bottom: 32px;
@@ -1397,7 +1412,7 @@ body {
         flex-flow: column nowrap;
         justify-content: space-between;
         border-radius: 30px;
-        min-height: 315px;
+        min-height: 255px;
         height: 100%;
         padding: 15px;
         transition: all 0.3s;
@@ -1901,6 +1916,7 @@ body {
         background: #fff;
         padding-top: 35px;
         padding-left: 40px;
+		padding-right: 24px;
         margin-left: auto;
         margin-right: 0;
         border-radius: 30px 0 0 30px;

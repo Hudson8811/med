@@ -2742,7 +2742,7 @@ jQuery(function () {
 		modalReg();
 		bodyNoScroll()
 	});
-	$('.js-btn__detail').on('click', function () {
+	/*$('.js-btn__detail').on('click', function () {
         let name = $(this).data('name');
         let text = htmlspecialchars_decode($(this).data('text'));
         let img = $(this).data('img');
@@ -2751,6 +2751,31 @@ jQuery(function () {
         $('#modal-detail .modal-detail__company__title').text(name);
 		modalDetail()
 		bodyNoScroll()
+	});*/
+	$('.js-btn__detail').on('click', function () {
+        let name = $(this).data('name');
+        let text = htmlspecialchars_decode($(this).data('text'));
+        let img = $(this).data('img');
+        if (img !== ''){
+            $('#modal-detail-product .modal-detail-product__img img').attr('src', img).show();
+        } else {
+            $('#modal-detail-product .modal-detail-product__img img').hide();
+        }
+        $('#modal-detail-product .modal-detail__company__text .text__20').html(text);
+        $('#modal-detail-product .modal-detail__company__title').text(name);
+        $('.hint__lists').html('');
+        modalDetailProduct()
+		bodyNoScroll()
+	});
+	$('.js-btn__detail-company').on('click', function () {
+        let name = $(this).data('name');
+        let text = htmlspecialchars_decode($(this).data('text'));
+        let img = $(this).data('img');
+        $('#modal-detail.modal-detail').css('background-image', 'url('+img+')');
+        $('#modal-detail .modal-detail__company__text .text__20').html(text);
+        $('#modal-detail .modal-detail__company__title').text(name);
+        modalDetail()
+        bodyNoScroll()
 	});
     $('.js-btn__detail-product').on('click', function () {
         let name = $(this).data('name');

@@ -4018,6 +4018,8 @@ body {
   width: 100%;
   max-width: 663px;
   margin-bottom: 30px;
+  font-size: 62px;
+  line-height: 1;
 }
 
 .detailed-offer__slide__title span {
@@ -4056,8 +4058,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
-  width: 192px;
-  height: 192px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.36);
   text-align: center;
@@ -4065,10 +4067,12 @@ body {
 
 .detailed-offer__slide__label__title {
   margin-bottom: 9px;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
 }
 
 .detailed-offer__slide__label__title span {
-  font-size: 44px;
+  font-size: 37px;
   font-style: normal;
   font-weight: 700;
 }
@@ -4220,6 +4224,11 @@ body {
   background: #193762;
   padding: 35px 32px 32px 23px;
   z-index: 0;
+}
+
+.company__list__title {
+  line-height: 1.1 !important;
+  margin-top: -0.1em;
 }
 
 .company__list__col {
@@ -4392,10 +4401,17 @@ body {
 .products__card__title {
   color: #193762;
   margin-bottom: 15px;
-  font-size: 41.31px;
+  font-size: 32px;
   font-style: normal;
   font-weight: 700;
-  line-height: 41.31px;
+  line-height: 1.2;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+}
+
+.products__card__text {
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
 }
 
 .products__card__buttons {
@@ -4700,7 +4716,7 @@ body {
   flex-flow: column nowrap;
   justify-content: space-between;
   border-radius: 30px;
-  min-height: 315px;
+  min-height: 255px;
   height: 100%;
   padding: 15px;
   transition: all 0.3s;
@@ -5119,6 +5135,7 @@ body {
   background: #fff;
   padding-top: 35px;
   padding-left: 40px;
+  padding-right: 24px;
   margin-left: auto;
   margin-right: 0;
   border-radius: 30px 0 0 30px;
@@ -6758,7 +6775,7 @@ body {
   }
 
   .products__card__title {
-    font-size: 36px;
+    font-size: 28px;
     line-height: 1.2;
   }
 
@@ -7085,14 +7102,14 @@ body {
   }
 
   .detailed-offer__slide__label {
-    width: 130px;
-    height: 130px;
+    width: 180px;
+    height: 180px;
     background: rgb(255, 255, 255);
     margin-right: 20px;
   }
 
   .detailed-offer__slide__label__title span {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .detailed-offer__slide__label__subtitle {
@@ -7112,7 +7129,7 @@ body {
 
   .detailed-offer__slide__label--2 {
     right: auto;
-    left: 160px;
+    left: 210px;
     top: 30px;
   }
 
@@ -7348,8 +7365,8 @@ body {
   }
 
   .detailed-offer__slide__label {
-    width: 118px;
-    height: 118px;
+    width: 130px;
+    height: 130px;
   }
 
   .detailed-offer__slide__label__title span {
@@ -7366,6 +7383,7 @@ body {
 
   .detailed-offer__slide__label--2 {
     top: 10px;
+    left: 160px;
   }
 
   .detailed-offer__slide__btn {
