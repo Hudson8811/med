@@ -2598,10 +2598,10 @@ jQuery(function () {
 		});
 
 	})
-	var productsSlider
+	var productsSlider;
 	$('.js-products__slider').each(function(){
-		var slider=$(this)
-		var productsSlider = new Swiper(slider[0], {
+		let slider = $(this);
+		productsSlider = new Swiper(slider[0], {
 			// watchOverflow: true,
 			// watchSlidesVisibility: true,
 			// watchSlidesProgress: true,
@@ -2610,6 +2610,8 @@ jQuery(function () {
 			centeredSlides: false,
 			spaceBetween: 25,
 			slidesPerView: 1.2,
+            autoHeight: false,
+            speed: 300,
 			navigation: {
 				nextEl: slider.find('.swiper-button-next')[0],
 				prevEl: slider.find('.swiper-button-prev')[0]
@@ -2620,21 +2622,20 @@ jQuery(function () {
 				clickable: true
 			},
 			breakpoints: {
-			    // when window width is >= 480px
 			  1250: {
 			        slidesPerView: 3,
 			        spaceBetween: 25,
-							centeredSlides: true,
-							loop: true,
+                    centeredSlides: true,
+                    loop: true,
 			    },
 			  992: {
 			        slidesPerView: 2,
-							centeredSlides: true,
+                    centeredSlides: true,
 			        spaceBetween: 25
 			    },
 			  768: {
 			        slidesPerView: 1.5,
-							centeredSlides: true,
+                    centeredSlides: true,
 			        spaceBetween: 25
 			    },
 			}			
@@ -2668,8 +2669,8 @@ jQuery(function () {
 	})
 	var partnersSlider
 	$('.js-partners__slider').each(function(){
-		var slider=$(this)
-		var partnersSlider = new Swiper(slider[0], {
+		let slider=$(this)
+		partnersSlider = new Swiper(slider[0], {
 			spaceBetween: 30,
 			speed: 2000,
 			freeMode: true,
