@@ -2596,7 +2596,7 @@ jQuery(function () {
 				clickable: true
 			},
             autoplay: {
-                delay: 60000,
+                delay: 20000,
                 // reverseDirection: true,
                 disableOnInteraction: false,
             },
