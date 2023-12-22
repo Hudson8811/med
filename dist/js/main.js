@@ -2596,7 +2596,7 @@ jQuery(function () {
 				clickable: true
 			},
             autoplay: {
-                delay: 20000,
+                delay: 10000,
                 // reverseDirection: true,
                 disableOnInteraction: false,
             },
@@ -2694,13 +2694,19 @@ jQuery(function () {
 
 	})
 	function modalReg() {
-        $('#modal-reg .contacts__form__title').text('Заказать звонок');
 		$.fancybox.open({
-			src: "#modal-reg",
+			src: "#modal-reg-callback",
 			type: "inline",
 			touch: false
 		});
-	}	
+	}
+	function modalRegOrder() {
+		$.fancybox.open({
+			src: "#modal-reg-order",
+			type: "inline",
+			touch: false
+		});
+	}
 	function modalDetail() {
 		// event.preventDefault();
 		$.fancybox.open({
@@ -2722,15 +2728,13 @@ jQuery(function () {
 		
 	}	
 	function modalRegCatalog() {
-        $('#modal-reg .contacts__form__title').text('Запросить каталог');
 		$.fancybox.open({
 			src: "#modal-reg",
 			type: "inline",
 			touch: false
 
 		});
-		
-	}	
+	}
 	$(document).on('afterClose.fb', function( e, instance, slide ) {
     bodyYesScroll();
 	});
@@ -2746,6 +2750,11 @@ jQuery(function () {
 	$('.js-btn__order').on('click', function () {
 	    event.preventDefault();
 		modalReg();
+		bodyNoScroll()
+	});
+	$('.js-btn__order-order').on('click', function () {
+	    event.preventDefault();
+		modalRegOrder();
 		bodyNoScroll()
 	});
 	/*$('.js-btn__detail').on('click', function () {
