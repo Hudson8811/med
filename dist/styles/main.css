@@ -5188,13 +5188,22 @@ body {
 }
 
 .modal-detail__company__file:first-child {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .modal-detail__company__file:not(:first-child) {
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #E8EBEF;
+}
+
+.modal-detail__company__file a {
+  color: #1B316D;
+  outline: none;
+}
+
+.modal-detail__company__file a:hover {
+  text-decoration: none;
 }
 
 .modal-detail-product {

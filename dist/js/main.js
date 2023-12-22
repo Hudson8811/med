@@ -2787,6 +2787,7 @@ jQuery(function () {
         } else {
             $('#modal-detail-product .modal-detail-product__img img').hide();
         }
+
         $('#modal-detail-product .modal-detail__company__text .text__20').html(text);
         $('#modal-detail-product .modal-detail__company__title').text(name);
 
@@ -2818,6 +2819,29 @@ jQuery(function () {
         } catch (error) {
             console.error("Ошибка при декодировании JSON: " + error.message);
         }
+
+        try {
+            let files = $(this).data('files');
+            let html = '<div class="modal-detail__company__files">';
+            let i = 0;
+            files.forEach(function (elem){
+                i++;
+                let link = elem.link;
+                let title = elem.title;
+                html += '<div class="modal-detail__company__file">\n' +
+                    '<a href="'+link+'" download>'+title+'</a>\n' +
+                    '</div>\n';
+            });
+            html += '</div>';
+
+            if (i > 0){
+                $('#modal-detail-product .modal-detail__company__text .text__20').append(html);
+            }
+        } catch (error) {
+            console.error("Ошибка при декодировании JSON: " + error.message);
+        }
+
+
         modalDetailProduct()
         bodyNoScroll()
     });
