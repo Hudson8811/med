@@ -2578,8 +2578,8 @@ jQuery(function () {
 
 	var reviewsAll
 	$('.js-detailed-offer__slider').each(function(){
-		var slider=$(this)
-		var reviewsAll = new Swiper(slider[0], {
+		let slider=$(this)
+		reviewsAll = new Swiper(slider[0], {
 			// watchOverflow: true,
 			// watchSlidesVisibility: true,
 			// watchSlidesProgress: true,
@@ -2595,7 +2595,12 @@ jQuery(function () {
 				type: 'bullets',
 				clickable: true
 			},
-		});
+            autoplay: {
+                delay: 60000,
+                // reverseDirection: true,
+                disableOnInteraction: false,
+            },
+        });
 
 	})
 	var productsSlider;
